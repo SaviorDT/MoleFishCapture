@@ -75,6 +75,7 @@ namespace 撈金魚
             );
             for (int i=0; i<count; i++)
             {
+                removeOneTime();
                 Thread.Sleep(10);
                 startFish();
                 getFish();
@@ -111,12 +112,10 @@ namespace 撈金魚
             {
                 Thread.Sleep(50);
                 Point[] fish = ScreenAction.GetFish(window);
-                if (fish.Length == 7)
-                    return;
-                if(fish.Length == 0)
+                if(fish.Length < 3)
                 {
                     DateTime start = DateTime.Now;
-                    while(fish.Length == 0)
+                    while(fish.Length < 3)
                     {
                         if (DateTime.Now - start >= TimeSpan.FromSeconds(3))
                         {
@@ -125,10 +124,30 @@ namespace 撈金魚
                         fish = ScreenAction.GetFish(window);
                     }
                 }
+                if (fish.Length == 7)
+                    return;
                 Point net_center = AnalyzeNet.CalculateBestPoint(fish, window.rect);
                 DoInput.fishClickKit(window.rect, net_center.X + NET_FIX_X, net_center.Y + NET_FIX_Y);
             }
         }
+
+        private void removeOneTime()
+        {
+            Application.Current.Dispatcher.Invoke((ThreadStart)delegate
+            {
+                input.Text = Convert.ToString(Convert.ToInt32(input.Text)-1);
+            }
+            );
+        }
+
+        //public void addText(string s)
+        //{
+        //    Application.Current.Dispatcher.Invoke((ThreadStart)delegate
+        //    {
+        //        input.Text += s + "\n";
+        //    }
+        //    );
+        //}
 
         //public void addText(string s)
         //{

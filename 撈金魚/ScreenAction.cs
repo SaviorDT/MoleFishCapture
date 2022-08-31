@@ -93,7 +93,8 @@ namespace 撈金魚
         private static Point ScanFish(FastBitmap[] shot, int x, int y, bool[,] scanned)
         {
             ArrayList points = new ArrayList();
-            HashSet<Point> to_scan = new HashSet<Point>();
+            SortedSet<Point> to_scan = new SortedSet<Point>(new PointComparer());
+            //HashSet<Point> to_scan = new HashSet<Point>();
 
             points.Add(new Point(x, y));
             scanned[x, y] = true;
@@ -101,22 +102,21 @@ namespace 撈金魚
 
             while(to_scan.Count > 0)
             {
-                //Console.WriteLine(to_scan.Count);
                 Point pt = to_scan.First();
-                to_scan.Remove(pt);
                 scanned[pt.X, pt.Y] = true;
                 if (shot[0].GetPixelInt(pt.X, pt.Y) != shot[1].GetPixelInt(pt.X, pt.Y))
                 {
                     points.Add(pt);
                     markAround(to_scan, pt.X, pt.Y, scanned);
                 }
+                to_scan.Remove(pt);
             }
 
             //savePoints(points, shot);
             return calculateCenterPoint(points);
         }
 
-        private static void markAround(HashSet<Point> to_scan, int x, int y, bool[,] scanned)
+        private static void markAround(SortedSet<Point> to_scan, int x, int y, bool[,] scanned)
         {
             for(int i=x-2; i<=x+2; i++)
             {
@@ -128,6 +128,16 @@ namespace 撈金魚
                             to_scan.Add(new Point(i,j));
                     } catch (System.IndexOutOfRangeException) { }
                 }
+            }
+        }
+
+        private class PointComparer : IComparer<Point>
+        {
+            public int Compare(Point x, Point y)
+            {
+                if (x.X == y.X)
+                    return x.Y.CompareTo(y.Y);
+                return x.X.CompareTo(y.X);
             }
         }
 
