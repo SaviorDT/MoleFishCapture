@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\我的東西\\常用\\程式\\vs\\撈金魚\\撈金魚\\撈金魚.csproj": {}
+  },
+  "projects": {
+    "C:\\我的東西\\常用\\程式\\vs\\撈金魚\\撈金魚\\撈金魚.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\我的東西\\常用\\程式\\vs\\撈金魚\\撈金魚\\撈金魚.csproj",
+        "projectName": "撈金魚",
+        "projectPath": "C:\\我的東西\\常用\\程式\\vs\\撈金魚\\撈金魚\\撈金魚.csproj",
+        "packagesPath": "C:\\Users\\Hcu\\.nuget\\packages\\",
+        "outputPath": "C:\\我的東西\\常用\\程式\\vs\\撈金魚\\撈金魚\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Hcu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Costura.Fody": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.7.0, )"
+            },
+            "FastBitmapLib": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "MouseKeyHook": {
+              "target": "Package",
+              "version": "[5.6.0, )"
+            },
+            "System.Collections.Immutable": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

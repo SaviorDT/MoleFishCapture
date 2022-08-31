@@ -1,0 +1,17 @@
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\bin\Debug\撈金魚.exe.config
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\bin\Debug\撈金魚.exe
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\bin\Debug\撈金魚.pdb
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\撈金魚.csproj.AssemblyReference.cache
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\撈金魚.csproj.SuggestedBindingRedirects.cache
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\MainWindow.g.cs
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\App.g.cs
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\撈金魚_MarkupCompile.cache
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\撈金魚_MarkupCompile.lref
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\MainWindow.baml
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\撈金魚.g.resources
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\撈金魚.Properties.Resources.resources
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\撈金魚.csproj.GenerateResource.cache
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\撈金魚.csproj.CoreCompileInputs.cache
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\撈金魚.exe
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\撈金魚.pdb
+C:\我的東西\常用\程式\vs\撈金魚\撈金魚\obj\Debug\撈金魚.csproj.Fody.CopyLocal.cache
