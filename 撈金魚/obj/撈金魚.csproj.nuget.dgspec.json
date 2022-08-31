@@ -51,10 +51,6 @@
             "MouseKeyHook": {
               "target": "Package",
               "version": "[5.6.0, )"
-            },
-            "System.Collections.Immutable": {
-              "target": "Package",
-              "version": "[6.0.0, )"
             }
           }
         }
