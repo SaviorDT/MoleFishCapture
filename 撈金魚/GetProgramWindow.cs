@@ -31,7 +31,7 @@ namespace 撈金魚
         {
             refreshWindowRect();
             getContentRect();
-            AnalyzeNet.refreshRadius(85 * rect.width / MainWindow.MOLE_W);
+            AnalyzeNet.refreshRadius(100 * rect.width / MainWindow.MOLE_W);
         }
         private void getContentRect()
         {

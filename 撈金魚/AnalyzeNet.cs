@@ -24,7 +24,7 @@ namespace 撈金魚
             }
         }
 
-        public static Point CalculateBestPoint(Point[] points, MyRect rect)
+        public static Point CalculateBestPoint(Point[] points, MyRect rect, MainWindow main)
         {
             SortedSet<FixPoint>[] fixes = new SortedSet<FixPoint>[rect.height];
             int max_point = 0;
@@ -50,6 +50,8 @@ namespace 撈金魚
                     maxes_y.Add(i);
             }
 
+            //if (max_point < 3) return new Point(-1, -1);
+            //main.addNum(max_point);
             int best_y = maxes_y[maxes_y.Count / 2];
             int best_x = getBestPoint(fixes[best_y], rect);
             return new Point(best_x, best_y);
@@ -109,7 +111,7 @@ namespace 撈金魚
             }catch (IndexOutOfRangeException) { }
         }
 
-        public struct FixPoint : IComparable<FixPoint>
+        private struct FixPoint : IComparable<FixPoint>
         {
             public int x;
             public int fix;

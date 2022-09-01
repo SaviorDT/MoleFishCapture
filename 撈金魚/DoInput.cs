@@ -134,7 +134,9 @@ namespace 撈金魚
         {
             if (x < 0 || y < 0)
                 throw new ArgumentException();
-            ClickLeftMouseButton(rect.left + x * rect.width / MainWindow.MOLE_W, rect.top + y * rect.height / MainWindow.MOLE_H, true);
+            if (x >= rect.width) x = rect.width -1;
+            if (y >= rect.height) y = rect.height -1;
+            ClickLeftMouseButton(rect.left + x, rect.top + y, true);
         }
 
         private static bool clicking = false;

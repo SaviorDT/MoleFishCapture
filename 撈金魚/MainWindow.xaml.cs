@@ -111,24 +111,35 @@ namespace 撈金魚
             for(int i=0; i<25; i++)
             {
                 Thread.Sleep(50);
-                Point[] fish = ScreenAction.GetFish(window);
-                if(fish.Length < 3)
+                Point net_center;
+                do
                 {
-                    DateTime start = DateTime.Now;
-                    while(fish.Length < 3)
-                    {
-                        if (DateTime.Now - start >= TimeSpan.FromSeconds(3))
-                        {
-                            return;
-                        }
-                        fish = ScreenAction.GetFish(window);
-                    }
-                }
-                if (fish.Length == 7)
-                    return;
-                Point net_center = AnalyzeNet.CalculateBestPoint(fish, window.rect);
-                DoInput.fishClickKit(window.rect, net_center.X + NET_FIX_X, net_center.Y + NET_FIX_Y);
+                    Point[] fish = findDiferences();
+                    if (fish.Length == 7)
+                        return;
+                    net_center = AnalyzeNet.CalculateBestPoint(fish, window.rect, this);
+                } while (net_center.X == -1);
+                DoInput.fishClickKit(window.rect, net_center.X + NET_FIX_X*MOLE_W/window.rect.width, net_center.Y + NET_FIX_Y*MOLE_H / window.rect.height);
             }
+        }
+
+        private Point[] findDiferences()
+        {
+            Point[] fish = ScreenAction.GetFish(window);
+            if (fish.Length < 3)
+            {
+                DateTime start = DateTime.Now;
+                while (fish.Length < 3)
+                {
+                    if (DateTime.Now - start >= TimeSpan.FromSeconds(5))
+                    {
+                        return new Point[7];
+                    }
+                    fish = ScreenAction.GetFish(window);
+                }
+            }
+
+            return fish;
         }
 
         private void removeOneTime()
@@ -140,14 +151,23 @@ namespace 撈金魚
             );
         }
 
-        //public void addText(string s)
-        //{
-        //    Application.Current.Dispatcher.Invoke((ThreadStart)delegate
-        //    {
-        //        input.Text += s + "\n";
-        //    }
-        //    );
-        //}
+        public void addText(string s)
+        {
+            Application.Current.Dispatcher.Invoke((ThreadStart)delegate
+            {
+                input.Text += s + "\n";
+            }
+            );
+        }
+
+        public void addNum(int num)
+        {
+            Application.Current.Dispatcher.Invoke((ThreadStart)delegate
+            {
+                input.Text = Convert.ToString(Convert.ToInt32(input.Text) + num);
+            }
+            );
+        }
 
         //public void addText(string s)
         //{
