@@ -37,7 +37,7 @@ namespace 撈金魚
     /// </summary>
     public partial class MainWindow : Window
     {
-        GetProgramWindow window = new GetProgramWindow("flashplayer_32_sa");
+        GetProgramWindow window = new GetProgramWindow("flashplayer_*");
         public const int MOLE_W = 960, MOLE_H = 560, BUCKET_NET_X = 150, BUCKET_NET_Y = -10, BUCKET_WATER_X = 235, BUCKET_WATER_Y = 415, NET_FIX_X = 50, NET_FIX_Y = 45;
 
         private void Button_Click(object sender, RoutedEventArgs e)
